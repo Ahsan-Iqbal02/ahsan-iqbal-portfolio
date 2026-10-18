@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ahsan Iqbal — Personal Portfolio Website
 
 A modern, high-performance, and responsive personal portfolio website for **Ahsan Iqbal** (Software Engineering Student | Aspiring AI/ML Engineer), built with **React**, **Vite**, **Tailwind CSS**, and **Framer Motion**.
@@ -152,3 +153,7 @@ You do **not** need to touch the React components to update your information:
 
 ## 📄 License
 Created for **Ahsan Iqbal** &copy; 2026.
+=======
+# ahsan-iqbal-portfolio
+Personal portfolio website built with React, Vite and Tailwind CSS
+>>>>>>> 28ec4d4052d5ccb647cb0a43ded1e6efc4f3a371
