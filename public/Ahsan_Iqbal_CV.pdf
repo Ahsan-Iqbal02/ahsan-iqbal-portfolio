@@ -1,0 +1,138 @@
+%PDF-1.4
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 612 792]
+  /Contents 4 0 R
+  /Resources <<
+    /Font <<
+      /F1 5 0 R
+      /F2 6 0 R
+    >>
+  >>
+>>
+endobj
+
+4 0 obj
+<<
+  /Length 1350
+>>
+stream
+BT
+/F2 22 Tf
+50 730 Td
+(AHSAN IQBAL) Tj
+0 -20 Td
+/F1 11 Tf
+(JUNIOR SOFTWARE DEVELOPER INTERN) Tj
+0 -18 Td
+(Phone: 0306 7122396  |  Email: ahsaniqbal0409@gmail.com) Tj
+0 -15 Td
+(GitHub: github.com/Ahsan-Iqbal02  |  LinkedIn: linkedin.com/in/ahsan-iqbal-61689437a) Tj
+0 -30 Td
+/F2 13 Tf
+(SUMMARY) Tj
+0 -16 Td
+/F1 10 Tf
+(Software Engineering student at Superior University Lahore with hands-on experience in C++, Java, and Python.) Tj
+0 -14 Td
+(Demonstrated ability in building practical OOP applications including Pac-Man, Google Dino runner,) Tj
+0 -14 Td
+(Library Management, and Car Rental Systems. Actively pursuing AI/ML foundations and seeking an internship.) Tj
+0 -26 Td
+/F2 13 Tf
+(EDUCATIONAL HISTORY) Tj
+0 -16 Td
+/F1 10 Tf
+(BS Software Engineering - Superior University Lahore (2024 - 2028)) Tj
+0 -14 Td
+(ICS - Punjab College (2022 - 2024)) Tj
+0 -26 Td
+/F2 13 Tf
+(SKILLS & ABILITIES) Tj
+0 -16 Td
+/F1 10 Tf
+(Languages: C++, Python, Java, JavaScript) Tj
+0 -14 Td
+(Python Libraries: NumPy, Pandas, Matplotlib, Scikit-learn) Tj
+0 -14 Td
+(Core CS: Data Structures & Algorithms (DSA), DBMS, OOP, Problem Solving) Tj
+0 -14 Td
+(Math for ML: Linear Algebra, Calculus, Probability & Statistics) Tj
+0 -14 Td
+(Developer Tools: Version Control (Git), GitHub, VS Code, Jupyter Notebook) Tj
+0 -26 Td
+/F2 13 Tf
+(FEATURED PROJECTS) Tj
+0 -16 Td
+/F1 10 Tf
+(1. Pac-Man Arcade Game (Java, OOP, Ghost AI, Collision Detection)) Tj
+0 -14 Td
+(2. Google Dino Runner Clone (Java, Procedural Obstacles, Speed Scaling)) Tj
+0 -14 Td
+(3. Library Management System (C++, OOP, File Handling)) Tj
+0 -14 Td
+(4. Car Rental Management System (C++, OOP Architecture)) Tj
+0 -14 Td
+(5. Modern Portfolio Website (React, Vite, Tailwind CSS, Framer Motion)) Tj
+0 -26 Td
+/F2 13 Tf
+(CERTIFICATIONS & VOLUNTEERING) Tj
+0 -16 Td
+/F1 10 Tf
+(Networking Basics - Cisco Networking Academy) Tj
+0 -14 Td
+(Community Volunteer - Alkhidmat Foundation Pakistan) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+
+6 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000266 00000 n 
+0000001670 00000 n 
+0000001740 00000 n 
+trailer
+<<
+  /Size 7
+  /Root 1 0 R
+>>
+startxref
+1815
+%%EOF

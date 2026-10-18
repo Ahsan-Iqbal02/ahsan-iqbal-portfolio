@@ -1,0 +1,68 @@
+[
+  {
+    "id": "pacman-game",
+    "title": "Pac-Man Game",
+    "subtitle": "Java Arcade Recreation",
+    "description": "A Java recreation of the classic Pac-Man arcade game featuring responsive player movement, intelligent ghost AI pathfinding, collectible pellets, real-time score calculation, and robust collision detection.",
+    "tags": ["Java", "OOP", "Game Development"],
+    "githubUrl": "https://github.com/Ahsan-Iqbal02",
+    "demoUrl": null,
+    "featured": true,
+    "category": "Java Software"
+  },
+  {
+    "id": "google-dino-game",
+    "title": "Google Dino Game",
+    "subtitle": "Chrome Offline Runner Clone",
+    "description": "A Java clone of Chrome's offline dinosaur runner game featuring gravity-based jumping physics, randomly generated obstacle generation, procedural speed scaling, and live score tracking.",
+    "tags": ["Java", "OOP", "Game Development"],
+    "githubUrl": "https://github.com/Ahsan-Iqbal02",
+    "demoUrl": null,
+    "featured": true,
+    "category": "Java Software"
+  },
+  {
+    "id": "library-management",
+    "title": "Library Management System",
+    "subtitle": "Console-Based C++ OOP Application",
+    "description": "Robust desktop console application architected in C++ using advanced Object-Oriented Programming (OOP) paradigms including classes, inheritance, and encapsulation. Handles book inventories, student member records, issue/return transactions, and persistent file-based storage.",
+    "tags": ["C++", "OOP", "File Handling", "Console App"],
+    "githubUrl": "https://github.com/Ahsan-Iqbal02",
+    "demoUrl": null,
+    "featured": true,
+    "category": "C++ Software"
+  },
+  {
+    "id": "car-rental",
+    "title": "Car Rental System",
+    "subtitle": "C++ Vehicle Booking & Billing System",
+    "description": "Comprehensive C++ management system for vehicle fleet administration, customer profiling, reservation scheduling, and dynamic rental fee computation. Implemented with clean modular classes ensuring separation of concerns and data integrity.",
+    "tags": ["C++", "OOP", "Data Structures", "System Design"],
+    "githubUrl": "https://github.com/Ahsan-Iqbal02",
+    "demoUrl": null,
+    "featured": false,
+    "category": "C++ Software"
+  },
+  {
+    "id": "portfolio-website",
+    "title": "Modern Personal Portfolio Website",
+    "subtitle": "React, Vite & Tailwind CSS Showcase",
+    "description": "A fast, fully responsive, and accessible personal portfolio website built with React, Vite, Tailwind CSS, and Framer Motion. Features a dynamic typing hero, dark/light theme switching, modular data architecture, and an EmailJS-powered contact channel.",
+    "tags": ["React", "Tailwind CSS", "Framer Motion", "Vite", "EmailJS"],
+    "githubUrl": "https://github.com/Ahsan-Iqbal02",
+    "demoUrl": "https://github.com/Ahsan-Iqbal02",
+    "featured": true,
+    "category": "Frontend Web"
+  },
+  {
+    "id": "ml-upcoming",
+    "title": "Machine Learning Project — Coming Soon",
+    "subtitle": "Supervised Learning & Predictive Analytics",
+    "description": "Upcoming machine learning pipeline utilizing scikit-learn. Focuses on feature engineering, model training (regression & classification), hyperparameter tuning, and cross-validation for predictive intelligence.",
+    "tags": ["Machine Learning", "scikit-learn", "Python", "Predictive Analytics"],
+    "githubUrl": null,
+    "demoUrl": null,
+    "isComingSoon": true,
+    "category": "Machine Learning"
+  }
+]
