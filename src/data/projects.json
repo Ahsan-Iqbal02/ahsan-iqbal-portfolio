@@ -1,10 +1,54 @@
 [
   {
+    "id": "aesthete-store",
+    "title": "Aesthete Store",
+    "subtitle": "Full-Stack E-Commerce Web Application",
+    "description": "A complete online storefront with secure JWT authentication, a persistent shopping cart powered by Zustand, product browsing, and an admin dashboard for managing products and orders (full CRUD).",
+    "tags": [
+      "Next.js 15",
+      "TypeScript",
+      "MongoDB",
+      "JWT",
+      "Zustand",
+      "Tailwind CSS"
+    ],
+    "githubUrl": "https://github.com/Muhummad-Sami/Ecommerce",
+    "demoUrl": "https://aesthete-store.vercel.app",
+    "featured": true,
+    "category": "Full-Stack Web",
+    "year": "2026",
+    "team": "Muhammad Sami Abid"
+  },
+  {
+    "id": "vendor-quotation",
+    "title": "Vendor Quotation Management System",
+    "subtitle": "B2B Procurement Portal",
+    "description": "A procurement portal where vendors submit bids and buyers create quotes, compare prices across multiple suppliers, and analyse spending. Built as a split frontend/backend project with a REST API.",
+    "tags": [
+      "React (Vite)",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "REST APIs",
+      "Tailwind CSS"
+    ],
+    "githubUrl": "https://github.com/Muhummad-Sami/VenderQuotaionSystem",
+    "demoUrl": "https://vender-quotaion-system-1iu2.vercel.app",
+    "featured": true,
+    "category": "Full-Stack Web",
+    "year": "2026",
+    "team": "Muhammad Sami Abid"
+  },
+  {
     "id": "pacman-game",
     "title": "Pac-Man Game",
     "subtitle": "Java Arcade Recreation",
     "description": "A Java recreation of the classic Pac-Man arcade game featuring responsive player movement, intelligent ghost AI pathfinding, collectible pellets, real-time score calculation, and robust collision detection.",
-    "tags": ["Java", "OOP", "Game Development"],
+    "tags": [
+      "Java",
+      "OOP",
+      "Game Development"
+    ],
     "githubUrl": "https://github.com/Ahsan-Iqbal02",
     "demoUrl": null,
     "featured": true,
@@ -15,7 +59,11 @@
     "title": "Google Dino Game",
     "subtitle": "Chrome Offline Runner Clone",
     "description": "A Java clone of Chrome's offline dinosaur runner game featuring gravity-based jumping physics, randomly generated obstacle generation, procedural speed scaling, and live score tracking.",
-    "tags": ["Java", "OOP", "Game Development"],
+    "tags": [
+      "Java",
+      "OOP",
+      "Game Development"
+    ],
     "githubUrl": "https://github.com/Ahsan-Iqbal02",
     "demoUrl": null,
     "featured": true,
@@ -26,7 +74,12 @@
     "title": "Library Management System",
     "subtitle": "Console-Based C++ OOP Application",
     "description": "Robust desktop console application architected in C++ using advanced Object-Oriented Programming (OOP) paradigms including classes, inheritance, and encapsulation. Handles book inventories, student member records, issue/return transactions, and persistent file-based storage.",
-    "tags": ["C++", "OOP", "File Handling", "Console App"],
+    "tags": [
+      "C++",
+      "OOP",
+      "File Handling",
+      "Console App"
+    ],
     "githubUrl": "https://github.com/Ahsan-Iqbal02",
     "demoUrl": null,
     "featured": true,
@@ -37,7 +90,12 @@
     "title": "Car Rental System",
     "subtitle": "C++ Vehicle Booking & Billing System",
     "description": "Comprehensive C++ management system for vehicle fleet administration, customer profiling, reservation scheduling, and dynamic rental fee computation. Implemented with clean modular classes ensuring separation of concerns and data integrity.",
-    "tags": ["C++", "OOP", "Data Structures", "System Design"],
+    "tags": [
+      "C++",
+      "OOP",
+      "Data Structures",
+      "System Design"
+    ],
     "githubUrl": "https://github.com/Ahsan-Iqbal02",
     "demoUrl": null,
     "featured": false,
@@ -45,21 +103,32 @@
   },
   {
     "id": "portfolio-website",
-    "title": "Modern Personal Portfolio Website",
-    "subtitle": "React, Vite & Tailwind CSS Showcase",
-    "description": "A fast, fully responsive, and accessible personal portfolio website built with React, Vite, Tailwind CSS, and Framer Motion. Features a dynamic typing hero, dark/light theme switching, modular data architecture, and an EmailJS-powered contact channel.",
-    "tags": ["React", "Tailwind CSS", "Framer Motion", "Vite", "EmailJS"],
-    "githubUrl": "https://github.com/Ahsan-Iqbal02",
-    "demoUrl": "https://github.com/Ahsan-Iqbal02",
+    "title": "Personal Portfolio Website",
+    "subtitle": "React, Vite & Tailwind CSS",
+    "description": "This website: a fast, fully responsive portfolio built with React, Vite, Tailwind CSS and Framer Motion, with dark/light themes, project filters, data-driven content and an EmailJS contact form.",
+    "tags": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "EmailJS"
+    ],
+    "githubUrl": "https://github.com/Ahsan-Iqbal02/ahsan-iqbal-portfolio",
+    "demoUrl": "https://ahsan-iqbal-portfolio-two.vercel.app",
     "featured": true,
-    "category": "Frontend Web"
+    "category": "Full-Stack Web"
   },
   {
     "id": "ml-upcoming",
     "title": "Machine Learning Project — Coming Soon",
     "subtitle": "Supervised Learning & Predictive Analytics",
     "description": "Upcoming machine learning pipeline utilizing scikit-learn. Focuses on feature engineering, model training (regression & classification), hyperparameter tuning, and cross-validation for predictive intelligence.",
-    "tags": ["Machine Learning", "scikit-learn", "Python", "Predictive Analytics"],
+    "tags": [
+      "Machine Learning",
+      "scikit-learn",
+      "Python",
+      "Predictive Analytics"
+    ],
     "githubUrl": null,
     "demoUrl": null,
     "isComingSoon": true,

@@ -2,47 +2,131 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  /* Dark mode default */
-  --bg-app: #0b1120;
-  --bg-card: rgba(17, 26, 46, 0.85);
-  --border-card: rgba(30, 41, 59, 0.85);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --accent-violet: #8b5cf6;
-  --accent-cyan: #22d3ee;
-  --accent-amber: #f59e0b;
-  --bg-overlay: rgba(11, 17, 32, 0.68);
-  --bg-overlay-mid: rgba(11, 17, 32, 0.82);
-  --bg-radial: rgba(11, 17, 32, 0.88);
+/*
+  Colour system: beige + green
+  - forest-*  : main green accent (replaces violet)
+  - sand-*    : warm beige / tan accent (replaces cyan)
+  - ink-*     : warm neutrals (replaces slate)
+  Each step is a CSS variable, so the same class (e.g. text-forest-400)
+  stays readable in both light (beige) and dark (deep green) mode.
+*/
+@theme inline {
+  --color-forest-200: var(--forest-200);
+  --color-forest-300: var(--forest-300);
+  --color-forest-400: var(--forest-400);
+  --color-forest-500: var(--forest-500);
+  --color-forest-600: var(--forest-600);
+  --color-forest-950: var(--forest-950);
+
+  --color-sand-300: var(--sand-300);
+  --color-sand-400: var(--sand-400);
+  --color-sand-500: var(--sand-500);
+  --color-sand-950: var(--sand-950);
+
+  --color-ink-200: var(--ink-200);
+  --color-ink-400: var(--ink-400);
+  --color-ink-500: var(--ink-500);
+  --color-ink-800: var(--ink-800);
+  --color-ink-900: var(--ink-900);
+  --color-ink-950: var(--ink-950);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'DM Sans', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
+/* Light mode (default): warm beige paper + forest green */
+:root,
 html.light {
-  /* Light mode */
-  --bg-app: #f8fafc;
-  --bg-card: rgba(255, 255, 255, 0.88);
-  --border-card: rgba(226, 232, 240, 0.85);
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  --accent-violet: #8b5cf6;
-  --accent-cyan: #06b6d4;
-  --accent-amber: #f59e0b;
-  --bg-overlay: rgba(248, 250, 252, 0.76);
-  --bg-overlay-mid: rgba(248, 250, 252, 0.86);
-  --bg-radial: rgba(248, 250, 252, 0.90);
+  --bg-app: #f2ebdd;
+  --bg-card: rgba(250, 246, 238, 0.96);
+  --border-card: #e0d5bf;
+  --text-primary: #1e2a1c;
+  --text-secondary: #464a3c;
+  --text-muted: #5a5b4a;
+
+  --accent-1: #2f5d3a;
+  --accent-2: #5f7f3a;
+  --accent-amber: #9a6416;
+  --btn-text: #ffffff;
+  --glow: rgba(47, 93, 58, 0.22);
+  --grid-line: rgba(47, 93, 58, 0.06);
+  --particle-1: rgba(47, 93, 58, 0.32);
+  --particle-2: rgba(138, 106, 53, 0.30);
+
+  --forest-200: #1b3420;
+  --forest-300: #264d30;
+  --forest-400: #2f5d3a;
+  --forest-500: #3f7049;
+  --forest-600: #4f8259;
+  --forest-950: #dde8d3;
+
+  --sand-300: #6a4d22;
+  --sand-400: #7a5a2b;
+  --sand-500: #7a5c2c;
+  --sand-950: #efe2c6;
+
+  --ink-200: #2a2b22;
+  --ink-400: #5a5b4a;
+  --ink-500: #858471;
+  --ink-800: #e0d5bf;
+  --ink-900: #ebe3d2;
+  --ink-950: #f7f2e7;
+}
+
+/* Dark mode: deep forest night + beige text */
+html.dark {
+  --bg-app: #11160f;
+  --bg-card: rgba(26, 33, 24, 0.95);
+  --border-card: #2b3528;
+  --text-primary: #efe8d8;
+  --text-secondary: #cdc7b4;
+  --text-muted: #a6a190;
+
+  --accent-1: #93c48a;
+  --accent-2: #dcc799;
+  --accent-amber: #e0b062;
+  --btn-text: #11160f;
+  --glow: rgba(147, 196, 138, 0.18);
+  --grid-line: rgba(220, 199, 153, 0.045);
+  --particle-1: rgba(147, 196, 138, 0.38);
+  --particle-2: rgba(220, 199, 153, 0.30);
+
+  --forest-200: #d4e8cf;
+  --forest-300: #b3d7aa;
+  --forest-400: #93c48a;
+  --forest-500: #74a86b;
+  --forest-600: #5a8c52;
+  --forest-950: #1b2e1b;
+
+  --sand-300: #e8d9b4;
+  --sand-400: #dcc799;
+  --sand-500: #d2ba86;
+  --sand-950: #2b2617;
+
+  --ink-200: #e6dfcf;
+  --ink-400: #a6a190;
+  --ink-500: #8b8676;
+  --ink-800: #2b3528;
+  --ink-900: #1a2118;
+  --ink-950: #121811;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--bg-app);
   color: var(--text-primary);
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', 'Inter', sans-serif;
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+
+h4, h5, h6 {
+  font-family: var(--font-sans);
 }
 
 /* Reusable Theme Classes */
@@ -59,47 +143,61 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
 }
 
-/* Soft Violet Glow on Card Hover */
-.glow-violet-hover {
+/* Soft green lift on card hover */
+.glow-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.glow-violet-hover:hover {
-  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.35);
+.glow-hover:hover {
+  box-shadow: 0 14px 34px -14px var(--glow);
   transform: translateY(-4px);
-  border-color: rgba(139, 92, 246, 0.45);
+  border-color: color-mix(in oklab, var(--accent-1) 45%, transparent);
 }
 
-/* Violet-to-Cyan Gradients */
+/* Green-to-sand gradients */
 .gradient-accent-text {
-  background: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+  background: linear-gradient(120deg, var(--accent-1) 0%, var(--accent-2) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .btn-gradient {
-  background: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
-  color: #ffffff !important;
-  box-shadow: 0 4px 20px -2px rgba(139, 92, 246, 0.35);
+  background: linear-gradient(120deg, var(--accent-1) 0%, var(--accent-2) 100%);
+  color: var(--btn-text) !important;
+  box-shadow: 0 6px 20px -6px var(--glow);
   transition: all 0.25s ease;
 }
 .btn-gradient:hover {
-  box-shadow: 0 8px 25px -2px rgba(139, 92, 246, 0.55);
+  box-shadow: 0 10px 26px -6px var(--glow);
   transform: translateY(-2px);
 }
 
 .heading-gradient-line {
-  background: linear-gradient(90deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+  background: linear-gradient(90deg, var(--accent-1) 0%, var(--accent-2) 100%);
 }
 
 .active-nav-indicator {
-  background: linear-gradient(90deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+  background: linear-gradient(90deg, var(--accent-1) 0%, var(--accent-2) 100%);
 }
 
-/* Learning Badge (Amber #f59e0b) */
+/* Numbered section label, e.g. "01 / About" */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-1);
+}
+.section-label .num {
+  color: var(--text-muted);
+}
+
+/* Learning badge */
 .badge-learning {
-  background-color: rgba(245, 158, 11, 0.12);
+  background-color: color-mix(in oklab, var(--accent-amber) 12%, transparent);
   color: var(--accent-amber);
-  border: 1px solid rgba(245, 158, 11, 0.35);
+  border: 1px solid color-mix(in oklab, var(--accent-amber) 35%, transparent);
 }
 
 /* Custom Scrollbar */
@@ -114,19 +212,66 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-violet);
+  background: var(--accent-1);
 }
 
 /* Subtle background grid pattern */
 .bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
 }
 
-.light .bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+/* Paper grain overlay used on the page background */
+.paper-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Motion & transitions ---------- */
+
+/* Smooth colour change for the page shell */
+.theme-fade {
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+/* While switching light/dark, every element eases into its new colours */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: background-color 0.45s ease, color 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease !important;
+}
+
+/* Blinking caret for the typing line */
+.typing-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 3px;
+  vertical-align: -0.15em;
+  background: var(--accent-1);
+  animation: caret-blink 1s steps(1) infinite;
+}
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+/* Background glows slowly drift */
+.drift-slow { animation: drift 22s ease-in-out infinite alternate; }
+.drift-slow-reverse { animation: drift 26s ease-in-out infinite alternate-reverse; }
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(60px, 40px, 0) scale(1.12); }
+}
+
+/* Smooth hover feel for links and buttons */
+a, button {
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift-slow, .drift-slow-reverse, .typing-caret { animation: none; }
+  html { scroll-behavior: auto !important; }
 }

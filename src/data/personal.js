@@ -1,7 +1,7 @@
 export const personalData = {
   name: "Ahsan Iqbal",
   initials: "AI",
-  title: "Software Engineering Student | Aspiring AI/ML Engineer",
+  title: "Software Engineering Student | Aspiring Software Engineer",
   tagline: "Building practical, user-focused software, one project at a time.",
   email: "ahsaniqbal0409@gmail.com",
   github: "https://github.com/Ahsan-Iqbal02",
@@ -14,8 +14,8 @@ export const personalData = {
 
   heroRoles: [
     "Software Engineering Student",
-    "Java & C++ Developer",
-    "Python & Data Analysis",
+    "C++ Developer",
+    "Python Developer",
     "Future AI/ML Engineer"
   ],
 
@@ -23,7 +23,7 @@ export const personalData = {
     "Software Engineering student at Superior University Lahore with hands-on experience in C++, Java, and object-oriented programming, and working knowledge of Python for data analysis (NumPy, Pandas, Matplotlib, Scikit-learn). Currently building a strong foundation in AI/ML, including linear algebra, calculus, and statistics. Enjoys problem solving and learning new technologies, and is actively seeking a Software Engineering internship.",
 
   stats: [
-    { label: "Projects Completed", value: "5+", icon: "code" },
+    { label: "Projects Completed", value: "7+", icon: "code" },
     { label: "BS SE Degree", value: "2024–2028", icon: "academic" },
     { label: "Core Focus", value: "Learning AI/ML", icon: "sparkles" },
   ],

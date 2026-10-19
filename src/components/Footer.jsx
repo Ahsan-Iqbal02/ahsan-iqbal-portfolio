@@ -15,8 +15,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Brand & Copyright */}
         <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-violet-600 to-cyan-400 p-[1px]">
-            <div className="w-full h-full bg-[var(--bg-card)] rounded-[7px] flex items-center justify-center font-bold text-cyan-400 font-mono text-xs">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-forest-600 to-sand-400 p-[1px]">
+            <div className="w-full h-full bg-[var(--bg-card)] rounded-[7px] flex items-center justify-center font-bold text-sand-400 font-mono text-xs">
               {personalData.initials}
             </div>
           </div>
@@ -32,7 +32,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
-            className="p-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-violet-500/40 hover:text-violet-400 transition-colors"
+            className="p-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-forest-500/40 hover:text-forest-400 transition-colors"
           >
             <FiGithub className="w-4 h-4" />
           </a>
@@ -41,14 +41,14 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
-            className="p-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-cyan-500/40 hover:text-cyan-400 transition-colors"
+            className="p-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-sand-500/40 hover:text-sand-400 transition-colors"
           >
             <FiLinkedin className="w-4 h-4" />
           </a>
           <a
             href={`mailto:${personalData.email}`}
             aria-label="Send email"
-            className="p-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-violet-500/40 hover:text-violet-400 transition-colors"
+            className="p-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-forest-500/40 hover:text-forest-400 transition-colors"
           >
             <FiMail className="w-4 h-4" />
           </a>
@@ -57,7 +57,7 @@ export default function Footer() {
           <button
             onClick={scrollToTop}
             aria-label="Scroll back to top"
-            className="p-2 ml-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-violet-500/40 text-violet-400 hover:text-cyan-400 transition-all group"
+            className="p-2 ml-2 rounded-lg bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-forest-500/40 text-forest-400 hover:text-sand-400 transition-all group"
           >
             <FiArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
           </button>

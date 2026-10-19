@@ -53,7 +53,8 @@ export const skillCategories = [
     description: "Active knowledge expansion and next-stage competencies",
     isLearningGroup: true,
     skills: [
-      { name: "Frontend Development (React, Tailwind)", status: "Active Project", icon: "SiReact", color: "#22d3ee", isLearning: true },
+      { name: "AI/ML Engineering", status: "Active Study", icon: "FaBrain", isLearning: true },
+      { name: "Frontend Development (React, Tailwind)", status: "Active Project", icon: "SiReact", isLearning: true },
     ]
   }
 ];

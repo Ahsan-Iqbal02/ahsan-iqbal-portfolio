@@ -15,9 +15,9 @@ export default function Education() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-violet-950/40 border border-violet-500/30 text-violet-300 text-xs font-semibold uppercase tracking-wider mb-3"
+            className="section-label inline-flex items-center gap-2 mb-3"
           >
-            <span>Academic Background</span>
+            <span className="num">04 /</span><span>Education</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -52,32 +52,32 @@ export default function Education() {
               className="relative group"
             >
               {/* Timeline Indicator Dot */}
-              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-950 border-2 border-violet-500 flex items-center justify-center shadow-md shadow-violet-500/30 group-hover:scale-125 group-hover:bg-violet-500 transition-all">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 group-hover:bg-slate-950"></span>
+              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-ink-950 border-2 border-forest-500 flex items-center justify-center shadow-md shadow-forest-500/30 group-hover:scale-125 group-hover:bg-forest-500 transition-all">
+                <span className="w-2 h-2 rounded-full bg-sand-400 group-hover:bg-ink-950"></span>
               </div>
 
               {/* Education Card */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-[var(--bg-card)] backdrop-blur-md border border-[var(--border-card)] hover:border-violet-500/40 glow-violet-hover transition-all">
+              <div className="p-6 sm:p-8 rounded-2xl bg-[var(--bg-card)] backdrop-blur-md border border-[var(--border-card)] hover:border-forest-500/40 glow-hover transition-all">
                 {/* Top metadata */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                  <div className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3 py-1 rounded-full bg-violet-950/60 text-violet-300 border border-violet-500/30">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-3 py-1 rounded-full bg-forest-950/60 text-forest-300 border border-forest-500/30">
                     <FiCalendar className="w-3.5 h-3.5" />
                     <span>{item.period}</span>
                   </div>
 
-                  <span className="text-xs font-medium px-2.5 py-0.5 rounded-md bg-slate-900 text-[var(--text-secondary)] border border-slate-800">
+                  <span className="text-xs font-medium px-2.5 py-0.5 rounded-md bg-ink-900 text-[var(--text-secondary)] border border-ink-800">
                     {item.status}
                   </span>
                 </div>
 
                 {/* Degree title & Institution */}
-                <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] group-hover:text-cyan-400 transition-colors mb-1">
+                <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] group-hover:text-sand-400 transition-colors mb-1">
                   {item.degree}
                 </h3>
-                <div className="flex items-center gap-2 text-sm text-cyan-400 font-medium mb-4">
+                <div className="flex items-center gap-2 text-sm text-sand-400 font-medium mb-4">
                   <HiAcademicCap className="w-4 h-4" />
                   <span>{item.institution}</span>
-                  <span className="text-slate-500">&bull;</span>
+                  <span className="text-ink-500">&bull;</span>
                   <span className="text-[var(--text-muted)] text-xs flex items-center gap-1">
                     <FiMapPin className="w-3 h-3" /> {item.location}
                   </span>
@@ -93,7 +93,7 @@ export default function Education() {
                   <div className="space-y-2 pt-3 border-t border-[var(--border-card)]">
                     {item.highlights.map((highlight, hIdx) => (
                       <div key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[var(--text-secondary)]">
-                        <FiCheckCircle className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                        <FiCheckCircle className="w-4 h-4 text-sand-400 shrink-0 mt-0.5" />
                         <span>{highlight}</span>
                       </div>
                     ))}

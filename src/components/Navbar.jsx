@@ -13,6 +13,17 @@ const navLinks = [
   { name: 'Contact', href: '#contact' },
 ];
 
+// Position of an element on the page, ignoring scroll animations (transforms)
+const getPageTop = (el) => {
+  let y = 0;
+  let node = el;
+  while (node) {
+    y += node.offsetTop;
+    node = node.offsetParent;
+  }
+  return y;
+};
+
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +41,7 @@ export default function Navbar() {
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
-          const top = el.offsetTop;
+          const top = getPageTop(el);
           const height = el.offsetHeight;
           if (scrollPosition >= top && scrollPosition < top + height) {
             setActiveSection(section);
@@ -51,8 +62,7 @@ export default function Navbar() {
     const targetEl = document.getElementById(targetId);
     if (targetEl) {
       const topOffset = 80;
-      const elementPosition = targetEl.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+      const offsetPosition = getPageTop(targetEl) - topOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -65,7 +75,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[var(--bg-app)]/90 backdrop-blur-md shadow-lg shadow-violet-950/10 border-b border-[var(--border-card)]'
+          ? 'bg-[var(--bg-app)]/90 backdrop-blur-md shadow-lg shadow-forest-950/10 border-b border-[var(--border-card)]'
           : 'bg-transparent border-b border-transparent'
       }`}
     >
@@ -78,17 +88,17 @@ export default function Navbar() {
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="Ahsan Iqbal Homepage"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 via-violet-500 to-cyan-400 p-[2px] shadow-sm shadow-violet-500/30 group-hover:shadow-violet-400/50 transition-all">
-              <div className="w-full h-full bg-[var(--bg-card)] rounded-[10px] flex items-center justify-center font-bold text-cyan-400 font-mono tracking-tighter text-base group-hover:text-white transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-forest-600 via-forest-500 to-sand-400 p-[2px] shadow-sm shadow-forest-500/30 group-hover:shadow-forest-400/50 transition-all">
+              <div className="w-full h-full bg-[var(--bg-card)] rounded-[10px] flex items-center justify-center font-bold text-sand-400 font-mono tracking-tighter text-base group-hover:text-[var(--text-primary)] transition-colors">
                 {personalData.initials}
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-[var(--text-primary)] tracking-tight text-lg group-hover:text-violet-400 transition-colors">
+              <span className="font-bold text-[var(--text-primary)] tracking-tight text-lg group-hover:text-forest-400 transition-colors">
                 {personalData.name}
               </span>
-              <span className="text-[11px] text-cyan-400 font-medium tracking-wide -mt-1 hidden sm:block">
-                Software Engineer
+              <span className="text-xs text-sand-400 font-medium tracking-wide -mt-0.5 hidden sm:block">
+                Aspiring Software Engineer
               </span>
             </div>
           </a>
@@ -104,8 +114,8 @@ export default function Navbar() {
                   onClick={(e) => handleLinkClick(e, link.href)}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all relative ${
                     isActive
-                      ? 'text-cyan-400 bg-violet-950/40 shadow-inner border border-violet-500/30'
-                      : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-800/40'
+                      ? 'text-sand-400 bg-forest-950/40 shadow-inner border border-forest-500/30'
+                      : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-ink-800/40'
                   }`}
                 >
                   {link.name}
@@ -124,7 +134,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
-              className="p-2 text-[var(--text-secondary)] hover:text-violet-400 hover:bg-slate-800/40 rounded-lg transition-colors"
+              className="p-2 text-[var(--text-secondary)] hover:text-forest-400 hover:bg-ink-800/40 rounded-lg transition-colors"
             >
               <FiGithub className="w-5 h-5" />
             </a>
@@ -133,21 +143,29 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
-              className="p-2 text-[var(--text-secondary)] hover:text-cyan-400 hover:bg-slate-800/40 rounded-lg transition-colors"
+              className="p-2 text-[var(--text-secondary)] hover:text-sand-400 hover:bg-ink-800/40 rounded-lg transition-colors"
             >
               <FiLinkedin className="w-5 h-5" />
+            </a>
+
+            <a
+              href={personalData.cvPath}
+              download="Ahsan_Iqbal_CV.pdf"
+              className="ml-1 px-3.5 py-1.5 rounded-lg text-sm font-semibold btn-gradient"
+            >
+              CV
             </a>
 
             {/* Dark / Light Toggle */}
             <button
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-              className="p-2 ml-1 text-[var(--text-secondary)] hover:text-violet-400 hover:bg-slate-800/40 rounded-lg transition-colors border border-[var(--border-card)] bg-[var(--bg-card)]"
+              className="p-2 ml-1 text-[var(--text-secondary)] hover:text-forest-400 hover:bg-ink-800/40 rounded-lg transition-colors border border-[var(--border-card)] bg-[var(--bg-card)]"
             >
               {theme === 'dark' ? (
-                <FiSun className="w-5 h-5 text-amber-300" />
+                <FiSun className="w-5 h-5 text-sand-400" />
               ) : (
-                <FiMoon className="w-5 h-5 text-violet-500" />
+                <FiMoon className="w-5 h-5 text-forest-500" />
               )}
             </button>
           </div>
@@ -157,20 +175,20 @@ export default function Navbar() {
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="p-2 text-[var(--text-secondary)] hover:text-violet-400 rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)]"
+              className="p-2 text-[var(--text-secondary)] hover:text-forest-400 rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)]"
             >
               {theme === 'dark' ? (
-                <FiSun className="w-4 h-4 text-amber-300" />
+                <FiSun className="w-4 h-4 text-sand-400" />
               ) : (
-                <FiMoon className="w-4 h-4 text-violet-500" />
+                <FiMoon className="w-4 h-4 text-forest-500" />
               )}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Open navigation menu"
-              className="p-2 text-[var(--text-primary)] hover:text-cyan-400 focus:outline-none rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)]"
+              className="p-2 text-[var(--text-primary)] hover:text-sand-400 focus:outline-none rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)]"
             >
-              {isOpen ? <FiX className="w-6 h-6 text-cyan-400" /> : <FiMenu className="w-6 h-6" />}
+              {isOpen ? <FiX className="w-6 h-6 text-sand-400" /> : <FiMenu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -189,8 +207,8 @@ export default function Navbar() {
                   onClick={(e) => handleLinkClick(e, link.href)}
                   className={`px-4 py-2.5 rounded-lg text-base font-medium flex items-center justify-between ${
                     isActive
-                      ? 'text-cyan-400 bg-violet-950/50 border border-violet-500/30'
-                      : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-800/30'
+                      ? 'text-sand-400 bg-forest-950/50 border border-forest-500/30'
+                      : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-ink-800/30'
                   }`}
                 >
                   <span>{link.name}</span>
@@ -204,7 +222,7 @@ export default function Navbar() {
               href={personalData.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-violet-400"
+              className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-forest-400"
             >
               <FiGithub className="w-4 h-4" /> GitHub
             </a>
@@ -212,13 +230,13 @@ export default function Navbar() {
               href={personalData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-cyan-400"
+              className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-sand-400"
             >
               <FiLinkedin className="w-4 h-4" /> LinkedIn
             </a>
             <a
               href={`mailto:${personalData.email}`}
-              className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-violet-400"
+              className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-forest-400"
             >
               <FiMail className="w-4 h-4" /> Email
             </a>

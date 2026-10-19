@@ -22,34 +22,36 @@ import {
   FaSquareRootAlt, 
   FaChartLine,
   FaJava,
-  FaWaveSquare
+  FaWaveSquare,
+  FaBrain
 } from 'react-icons/fa';
 import { VscCode } from 'react-icons/vsc';
 import { FiBarChart2, FiCheckCircle } from 'react-icons/fi';
 import { HiSparkles } from 'react-icons/hi2';
 
 const iconMap = {
-  SiCplusplus: <SiCplusplus className="w-6 h-6 text-[#00599C]" />,
-  SiPython: <SiPython className="w-6 h-6 text-[#3776AB]" />,
-  FaJava: <FaJava className="w-6 h-6 text-[#ED8B00]" />,
-  SiJavascript: <SiJavascript className="w-6 h-6 text-[#F7DF1E]" />,
-  SiNumpy: <SiNumpy className="w-6 h-6 text-[#4DABCF]" />,
-  SiPandas: <SiPandas className="w-6 h-6 text-[#E70488]" />,
-  SiPlotly: <FiBarChart2 className="w-6 h-6 text-[#11557c]" />,
-  SiScikitlearn: <SiScikitlearn className="w-6 h-6 text-[#F7931E]" />,
-  FaProjectDiagram: <FaProjectDiagram className="w-6 h-6 text-[#06b6d4]" />,
-  FaCubes: <FaCubes className="w-6 h-6 text-[#38bdf8]" />,
-  FaDatabase: <FaDatabase className="w-6 h-6 text-[#3b82f6]" />,
-  FaLightbulb: <FaLightbulb className="w-6 h-6 text-[#eab308]" />,
-  FaSquareRootAlt: <FaSquareRootAlt className="w-6 h-6 text-[#a855f7]" />,
-  FaWaveSquare: <FaWaveSquare className="w-6 h-6 text-[#8b5cf6]" />,
-  FaChartLine: <FaChartLine className="w-6 h-6 text-[#ec4899]" />,
-  SiGit: <SiGit className="w-6 h-6 text-[#F05032]" />,
-  SiGithub: <SiGithub className="w-6 h-6 text-slate-200" />,
-  VscCode: <VscCode className="w-6 h-6 text-[#007ACC]" />,
-  SiJupyter: <SiJupyter className="w-6 h-6 text-[#F37626]" />,
-  SiReact: <SiReact className="w-6 h-6 text-[#22d3ee]" />,
-  SiTailwindcss: <SiTailwindcss className="w-6 h-6 text-[#38bdf8]" />,
+  SiCplusplus: <SiCplusplus className="w-6 h-6 text-forest-400" />,
+  SiPython: <SiPython className="w-6 h-6 text-forest-400" />,
+  FaJava: <FaJava className="w-6 h-6 text-forest-400" />,
+  SiJavascript: <SiJavascript className="w-6 h-6 text-forest-400" />,
+  SiNumpy: <SiNumpy className="w-6 h-6 text-forest-400" />,
+  SiPandas: <SiPandas className="w-6 h-6 text-forest-400" />,
+  SiPlotly: <FiBarChart2 className="w-6 h-6 text-forest-400" />,
+  SiScikitlearn: <SiScikitlearn className="w-6 h-6 text-forest-400" />,
+  FaProjectDiagram: <FaProjectDiagram className="w-6 h-6 text-forest-400" />,
+  FaCubes: <FaCubes className="w-6 h-6 text-forest-400" />,
+  FaDatabase: <FaDatabase className="w-6 h-6 text-forest-400" />,
+  FaLightbulb: <FaLightbulb className="w-6 h-6 text-forest-400" />,
+  FaSquareRootAlt: <FaSquareRootAlt className="w-6 h-6 text-forest-400" />,
+  FaWaveSquare: <FaWaveSquare className="w-6 h-6 text-forest-400" />,
+  FaChartLine: <FaChartLine className="w-6 h-6 text-forest-400" />,
+  SiGit: <SiGit className="w-6 h-6 text-forest-400" />,
+  SiGithub: <SiGithub className="w-6 h-6 text-forest-400" />,
+  VscCode: <VscCode className="w-6 h-6 text-forest-400" />,
+  SiJupyter: <SiJupyter className="w-6 h-6 text-forest-400" />,
+  FaBrain: <FaBrain className="w-6 h-6 text-forest-400" />,
+  SiReact: <SiReact className="w-6 h-6 text-forest-400" />,
+  SiTailwindcss: <SiTailwindcss className="w-6 h-6 text-forest-400" />,
 };
 
 export default function Skills() {
@@ -63,9 +65,9 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-violet-950/40 border border-violet-500/30 text-violet-400 text-xs font-semibold uppercase tracking-wider mb-3 backdrop-blur-sm"
+            className="section-label inline-flex items-center gap-2 mb-3"
           >
-            <span>Technical Capabilities</span>
+            <span className="num">02 /</span><span>Skills</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -101,8 +103,8 @@ export default function Skills() {
                 transition={{ duration: 0.4, delay: groupIdx * 0.08 }}
                 className={`rounded-2xl p-6 border backdrop-blur-md transition-all duration-300 relative overflow-hidden flex flex-col justify-between ${
                   isLearningGroup
-                    ? 'bg-[var(--bg-card)] border-amber-500/40 shadow-lg shadow-amber-950/20 hover:border-amber-400 hover:-translate-y-1'
-                    : 'bg-[var(--bg-card)] border-[var(--border-card)] hover:border-violet-500/40 shadow-md hover:shadow-violet-950/30 hover:-translate-y-1'
+                    ? 'bg-[var(--bg-card)] border-sand-500/40 shadow-lg shadow-sand-950/20 hover:border-sand-400 hover:-translate-y-1'
+                    : 'bg-[var(--bg-card)] border-[var(--border-card)] hover:border-forest-500/40 shadow-md hover:shadow-forest-950/30 hover:-translate-y-1'
                 }`}
               >
                 {/* Header of card */}
@@ -112,13 +114,13 @@ export default function Skills() {
                       {group.title}
                     </h3>
                     {isLearningGroup && (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30 animate-pulse">
-                        <HiSparkles className="w-3 h-3 text-amber-400" />
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-sand-500/10 text-sand-400 border border-sand-500/30">
+                        <HiSparkles className="w-3 h-3 text-sand-400" />
                         Learning
                       </span>
                     )}
                   </div>
-                  <p className="text-xs text-[var(--text-secondary)] mb-5 leading-relaxed">
+                  <p className="text-sm text-[var(--text-secondary)] mb-5 leading-relaxed">
                     {group.description}
                   </p>
 
@@ -127,11 +129,11 @@ export default function Skills() {
                     {group.skills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="group/item flex items-center justify-between p-2.5 rounded-xl bg-[var(--bg-app)]/50 hover:bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-violet-500/30 transition-all"
+                        className="group/item flex items-center justify-between p-2.5 rounded-xl bg-[var(--bg-app)]/50 hover:bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-forest-500/30 transition-all"
                       >
                         <div className="flex items-center gap-3">
                           <div className="w-9 h-9 rounded-lg bg-[var(--bg-card)] flex items-center justify-center p-1.5 border border-[var(--border-card)] shadow-inner group-hover/item:scale-105 transition-transform">
-                            {iconMap[skill.icon] || <FiCheckCircle className="w-5 h-5 text-violet-400" />}
+                            {iconMap[skill.icon] || <FiCheckCircle className="w-5 h-5 text-forest-400" />}
                           </div>
                           <span className="text-sm font-medium text-[var(--text-primary)] transition-colors">
                             {skill.name}
@@ -139,11 +141,11 @@ export default function Skills() {
                         </div>
 
                         {skill.isLearning ? (
-                          <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-sand-500/10 text-sand-400 border border-sand-500/30">
                             Learning
                           </span>
                         ) : (
-                          <span className="text-[11px] text-slate-400 font-mono">
+                          <span className="text-xs text-[var(--text-muted)] font-mono">
                             {skill.level}
                           </span>
                         )}
@@ -153,9 +155,9 @@ export default function Skills() {
                 </div>
 
                 {/* Footer hint */}
-                <div className="mt-5 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+                <div className="mt-5 pt-3 border-t border-[var(--border-card)] flex items-center justify-between text-xs text-[var(--text-muted)]">
                   <span>{group.skills.length} competencies</span>
-                  <span className="text-violet-400/90 font-mono">Verified</span>
+                  <span className="text-forest-400/90 font-mono">Verified</span>
                 </div>
               </motion.div>
             );

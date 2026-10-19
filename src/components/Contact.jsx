@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import confetti from 'canvas-confetti';
 import { personalData } from '../data/personal';
-import { FiMail, FiSend, FiGithub, FiLinkedin, FiMapPin, FiCheckCircle, FiAlertCircle, FiLoader } from 'react-icons/fi';
+import { FiMail, FiSend, FiGithub, FiLinkedin, FiMapPin, FiCheckCircle, FiAlertCircle, FiLoader, FiCopy, FiCheck } from 'react-icons/fi';
 
 export default function Contact() {
   const formRef = useRef();
@@ -14,6 +14,17 @@ export default function Contact() {
   });
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
   const [statusMessage, setStatusMessage] = useState('');
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(personalData.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${personalData.email}`;
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +37,7 @@ export default function Contact() {
         particleCount: 80,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#8b5cf6', '#a78bfa', '#22d3ee', '#38bdf8']
+        colors: ['#2f5d3a', '#5f7f3a', '#dcc799', '#c9b07a']
       });
     } catch {
       // Ignore if confetti not supported
@@ -101,9 +112,9 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-violet-950/40 border border-violet-500/30 text-violet-300 text-xs font-semibold uppercase tracking-wider mb-3"
+            className="section-label inline-flex items-center gap-2 mb-3"
           >
-            <span>Get in Touch</span>
+            <span className="num">06 /</span><span>Contact</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -121,7 +132,7 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="w-16 h-1 heading-gradient-line mx-auto mt-3 rounded-full"
           />
-          <p className="mt-4 text-cyan-400 font-medium text-base sm:text-lg">
+          <p className="mt-4 text-sand-400 font-medium text-base sm:text-lg">
             {personalData.contactIntro}
           </p>
         </div>
@@ -146,35 +157,45 @@ export default function Contact() {
               <div className="space-y-4 pt-2">
                 <a
                   href={`mailto:${personalData.email}`}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-[var(--bg-app)]/60 dark:bg-slate-900/60 hover:bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-violet-500/40 text-[var(--text-secondary)] hover:text-white transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-[var(--bg-app)]/60 dark:bg-ink-900/60 hover:bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-forest-500/40 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-violet-950/50 border border-violet-500/30 flex items-center justify-center text-violet-300 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-forest-950/50 border border-forest-500/30 flex items-center justify-center text-forest-300 group-hover:scale-110 transition-transform">
                     <FiMail className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wider">
                       Direct Email
                     </div>
-                    <div className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-cyan-400 transition-colors break-all">
+                    <div className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-sand-400 transition-colors break-all">
                       {personalData.email}
                     </div>
                   </div>
                 </a>
 
+                <button
+                  type="button"
+                  onClick={copyEmail}
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border border-forest-500/30 bg-forest-950/40 text-forest-300 hover:border-forest-500/60 transition-colors"
+                  aria-live="polite"
+                >
+                  {copied ? <FiCheck className="w-4 h-4" /> : <FiCopy className="w-4 h-4" />}
+                  <span>{copied ? 'Email copied!' : 'Copy email address'}</span>
+                </button>
+
                 <a
                   href={personalData.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-xl bg-[var(--bg-app)]/60 dark:bg-slate-900/60 hover:bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-violet-500/40 text-[var(--text-secondary)] hover:text-white transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-[var(--bg-app)]/60 dark:bg-ink-900/60 hover:bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-forest-500/40 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center text-slate-200 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-ink-950 border border-ink-800 flex items-center justify-center text-ink-200 group-hover:scale-110 transition-transform">
                     <FiGithub className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wider">
                       GitHub Profile
                     </div>
-                    <div className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-violet-400 transition-colors">
+                    <div className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-forest-400 transition-colors">
                       github.com/Ahsan-Iqbal02
                     </div>
                   </div>
@@ -184,23 +205,23 @@ export default function Contact() {
                   href={personalData.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-[var(--border-card)] hover:border-cyan-500/40 text-[var(--text-secondary)] hover:text-white transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-ink-900/60 hover:bg-ink-900 border border-[var(--border-card)] hover:border-sand-500/40 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-blue-950/50 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-forest-950/50 border border-forest-500/30 flex items-center justify-center text-forest-400 group-hover:scale-110 transition-transform">
                     <FiLinkedin className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wider">
                       LinkedIn
                     </div>
-                    <div className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-cyan-400 transition-colors">
+                    <div className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-sand-400 transition-colors">
                       ahsan-iqbal-61689437a
                     </div>
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/40 border border-[var(--border-card)] text-[var(--text-muted)]">
-                  <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center text-violet-400">
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-ink-900/40 border border-[var(--border-card)] text-[var(--text-muted)]">
+                  <div className="w-12 h-12 rounded-xl bg-ink-950 border border-ink-800 flex items-center justify-center text-forest-400">
                     <FiMapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -224,17 +245,17 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7"
           >
-            <div className="p-8 rounded-2xl bg-[var(--bg-card)] backdrop-blur-md border border-[var(--border-card)] shadow-xl relative glow-violet-hover transition-all">
+            <div className="p-8 rounded-2xl bg-[var(--bg-card)] backdrop-blur-md border border-[var(--border-card)] shadow-xl relative glow-hover transition-all">
               <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6">
                 Send a Message
               </h3>
 
               {/* Status alerts */}
               {status === 'success' && (
-                <div className="mb-6 p-4 rounded-xl bg-violet-950/60 border border-violet-500/40 flex items-start gap-3 text-violet-200 text-sm">
-                  <FiCheckCircle className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                <div className="mb-6 p-4 rounded-xl bg-forest-950/60 border border-forest-500/40 flex items-start gap-3 text-forest-200 text-sm">
+                  <FiCheckCircle className="w-5 h-5 text-sand-400 shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-white">Message Delivered!</div>
+                    <div className="font-semibold text-[var(--text-primary)]">Message Delivered!</div>
                     <div>{statusMessage}</div>
                   </div>
                 </div>
@@ -244,7 +265,7 @@ export default function Contact() {
                 <div className="mb-6 p-4 rounded-xl bg-rose-950/60 border border-rose-500/40 flex items-start gap-3 text-rose-300 text-sm">
                   <FiAlertCircle className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-semibold text-white">Delivery Note</div>
+                    <div className="font-semibold text-[var(--text-primary)]">Delivery Note</div>
                     <div className="mb-2">{statusMessage}</div>
                     <a
                       href={`mailto:${personalData.email}?subject=Contact%20from%20Portfolio&body=${encodeURIComponent(
@@ -261,7 +282,7 @@ export default function Contact() {
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label htmlFor="user_name" className="block text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] mb-2">
-                    Your Full Name <span className="text-violet-400">*</span>
+                    Your Full Name <span className="text-forest-400">*</span>
                   </label>
                   <input
                     id="user_name"
@@ -271,13 +292,13 @@ export default function Contact() {
                     value={formData.user_name}
                     onChange={handleChange}
                     placeholder="e.g. Jane Doe"
-                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-app)]/70 dark:bg-slate-900 border border-[var(--border-card)] text-[var(--text-primary)] placeholder-slate-500 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 transition-colors text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-app)]/70 dark:bg-ink-900 border border-[var(--border-card)] text-[var(--text-primary)] placeholder-ink-500 focus:outline-none focus:border-forest-400 focus:ring-1 focus:ring-forest-400 transition-colors text-sm"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="user_email" className="block text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] mb-2">
-                    Email Address <span className="text-violet-400">*</span>
+                    Email Address <span className="text-forest-400">*</span>
                   </label>
                   <input
                     id="user_email"
@@ -287,13 +308,13 @@ export default function Contact() {
                     value={formData.user_email}
                     onChange={handleChange}
                     placeholder="e.g. jane@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-app)]/70 dark:bg-slate-900 border border-[var(--border-card)] text-[var(--text-primary)] placeholder-slate-500 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 transition-colors text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-app)]/70 dark:bg-ink-900 border border-[var(--border-card)] text-[var(--text-primary)] placeholder-ink-500 focus:outline-none focus:border-forest-400 focus:ring-1 focus:ring-forest-400 transition-colors text-sm"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)] mb-2">
-                    Your Message <span className="text-violet-400">*</span>
+                    Your Message <span className="text-forest-400">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -303,7 +324,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Hello Ahsan, I'd like to discuss an opportunity or project..."
-                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-app)]/70 dark:bg-slate-900 border border-[var(--border-card)] text-[var(--text-primary)] placeholder-slate-500 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400 transition-colors text-sm resize-y"
+                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-app)]/70 dark:bg-ink-900 border border-[var(--border-card)] text-[var(--text-primary)] placeholder-ink-500 focus:outline-none focus:border-forest-400 focus:ring-1 focus:ring-forest-400 transition-colors text-sm resize-y"
                   ></textarea>
                 </div>
 

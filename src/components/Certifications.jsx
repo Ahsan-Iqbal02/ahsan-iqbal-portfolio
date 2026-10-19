@@ -15,9 +15,9 @@ export default function Certifications() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-violet-950/40 border border-violet-500/30 text-violet-300 text-xs font-semibold uppercase tracking-wider mb-3"
+            className="section-label inline-flex items-center gap-2 mb-3"
           >
-            <span>Credentials &amp; Impact</span>
+            <span className="num">05 /</span><span>Certifications</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -52,12 +52,12 @@ export default function Certifications() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="group rounded-2xl p-7 bg-[var(--bg-card)] backdrop-blur-md border border-[var(--border-card)] hover:border-violet-500/40 glow-violet-hover transition-all flex flex-col justify-between shadow-lg relative overflow-hidden"
+                className="group rounded-2xl p-7 bg-[var(--bg-card)] backdrop-blur-md border border-[var(--border-card)] hover:border-forest-500/40 glow-hover transition-all flex flex-col justify-between shadow-lg relative overflow-hidden"
               >
                 {/* Decorative background glow */}
                 <div
                   className={`absolute top-0 right-0 w-32 h-32 rounded-bl-full pointer-events-none transition-opacity ${
-                    isVolunteer ? 'bg-rose-500/5 group-hover:bg-rose-500/10' : 'bg-violet-500/5 group-hover:bg-violet-500/10'
+                    isVolunteer ? 'bg-sand-500/5 group-hover:bg-sand-500/10' : 'bg-forest-500/5 group-hover:bg-forest-500/10'
                   }`}
                 />
 
@@ -68,8 +68,8 @@ export default function Certifications() {
                       <div
                         className={`w-12 h-12 rounded-xl flex items-center justify-center border shadow-inner ${
                           isVolunteer
-                            ? 'bg-rose-950/30 border-rose-500/30 text-rose-400'
-                            : 'bg-violet-950/30 border-violet-500/30 text-violet-300'
+                            ? 'bg-sand-950/30 border-sand-500/30 text-sand-400'
+                            : 'bg-forest-950/30 border-forest-500/30 text-forest-300'
                         }`}
                       >
                         {isVolunteer ? (
@@ -91,8 +91,8 @@ export default function Certifications() {
                     <span
                       className={`text-xs font-mono font-medium px-2.5 py-1 rounded-full border ${
                         isVolunteer
-                          ? 'bg-rose-950/40 text-rose-300 border-rose-500/30'
-                          : 'bg-violet-950/40 text-violet-300 border-violet-500/30'
+                          ? 'bg-sand-950/40 text-sand-300 border-sand-500/30'
+                          : 'bg-forest-950/40 text-forest-300 border-forest-500/30'
                       }`}
                     >
                       {item.year}
@@ -100,7 +100,7 @@ export default function Certifications() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-cyan-400 transition-colors mb-3">
+                  <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-sand-400 transition-colors mb-3">
                     {item.title}
                   </h3>
 
@@ -119,11 +119,11 @@ export default function Certifications() {
                     {item.skillsGained.map((skill) => (
                       <span
                         key={skill}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-900 text-[var(--text-secondary)] border border-[var(--border-card)]"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-ink-900 text-[var(--text-secondary)] border border-[var(--border-card)]"
                       >
                         <FiCheckCircle
                           className={`w-3.5 h-3.5 ${
-                            isVolunteer ? 'text-rose-400' : 'text-cyan-400'
+                            isVolunteer ? 'text-sand-400' : 'text-sand-400'
                           }`}
                         />
                         {skill}
