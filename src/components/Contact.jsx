@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import confetti from 'canvas-confetti';
 import { personalData } from '../data/personal';
+import { visibleAttire } from '../data/attire';
 import { FiMail, FiSend, FiGithub, FiLinkedin, FiMapPin, FiCheckCircle, FiAlertCircle, FiLoader, FiCopy, FiCheck } from 'react-icons/fi';
 
 export default function Contact() {
@@ -114,7 +115,7 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
             className="section-label inline-flex items-center gap-2 mb-3"
           >
-            <span className="num">06 /</span><span>Contact</span>
+            <span className="num">{visibleAttire.length ? '07' : '06'} /</span><span>Contact</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}

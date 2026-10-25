@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { personalData } from '../data/personal';
+import { visibleAttire } from '../data/attire';
 import { FiSun, FiMoon, FiMenu, FiX, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const navLinks = [
@@ -10,6 +11,7 @@ const navLinks = [
   { name: 'Projects', href: '#projects' },
   { name: 'Education', href: '#education' },
   { name: 'Certifications', href: '#certifications' },
+  ...(visibleAttire.length ? [{ name: 'Attire', href: '#attire' }] : []),
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -94,7 +96,7 @@ export default function Navbar() {
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-[var(--text-primary)] tracking-tight text-lg group-hover:text-forest-400 transition-colors">
+              <span className="whitespace-nowrap font-bold text-[var(--text-primary)] tracking-tight text-lg group-hover:text-forest-400 transition-colors">
                 {personalData.name}
               </span>
               <span className="text-xs text-sand-400 font-medium tracking-wide -mt-0.5 hidden sm:block">
@@ -104,7 +106,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          <nav className="hidden xl:flex items-center gap-1 2xl:gap-2">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
@@ -128,7 +130,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Controls: Theme Toggle & Social Icons */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <a
               href={personalData.github}
               target="_blank"
@@ -171,7 +173,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu & Theme Button */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-2 xl:hidden">
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
@@ -196,7 +198,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="lg:hidden bg-[var(--bg-app)]/98 backdrop-blur-xl border-b border-[var(--border-card)] px-4 pt-3 pb-6 shadow-2xl transition-all">
+        <div className="xl:hidden bg-[var(--bg-app)]/98 backdrop-blur-xl border-b border-[var(--border-card)] px-4 pt-3 pb-6 shadow-2xl transition-all">
           <nav className="flex flex-col gap-1">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);

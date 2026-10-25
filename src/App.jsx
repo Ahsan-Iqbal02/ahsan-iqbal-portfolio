@@ -11,6 +11,7 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
+import Attire from './components/Attire';
 
 // Each section softly fades and rises into place as you scroll to it
 function Reveal({ children }) {
@@ -61,6 +62,7 @@ export default function App() {
             <Reveal><Projects /></Reveal>
             <Reveal><Education /></Reveal>
             <Reveal><Certifications /></Reveal>
+            <Reveal><Attire /></Reveal>
             <Reveal><Contact /></Reveal>
           </motion.main>
           <Footer />
